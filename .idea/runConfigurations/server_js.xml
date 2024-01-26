@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="server.js" type="NodeJSConfigurationType" path-to-node="$APPLICATION_CONFIG_DIR$/node/node-v18.15.0-win-x64/node" nameIsGenerated="true" path-to-js-file="dist/server.js" working-dir="$PROJECT_DIR$">
+    <method v="2">
+      <option name="TypeScript.Before.Run" enabled="true" FAIL_ON_ERROR="true" CONFIG_PATH="$PROJECT_DIR$/tsconfig.json" />
+    </method>
+  </configuration>
+</component>
