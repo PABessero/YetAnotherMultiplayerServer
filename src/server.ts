@@ -47,6 +47,8 @@ wss.on("connection", (ws) => {
     );
   }
 
+  console.log(players);
+
   for (let player of players) {
     ws.send(
       JSON.stringify({
@@ -70,6 +72,8 @@ wss.on("connection", (ws) => {
   }
 
   const player = new Player(uuidv4());
+  // console.log(player);
+  players.push(player);
 
   ws.send(
     JSON.stringify({
@@ -78,7 +82,13 @@ wss.on("connection", (ws) => {
     }),
   );
 
-  // broadcast_without_self()
+  broadcast_without_self(
+    JSON.stringify({
+      ACTION: "CREATE_PLAYER",
+      OBJECT: player,
+    }),
+    ws,
+  );
 
   ws.on("message", (data, isBinary) => {
     if (isBinary) {
@@ -130,6 +140,7 @@ wss.on("connection", (ws) => {
           // );
           player.posX = json_message["X"];
           player.posY = json_message["Y"];
+          // console.log(player.posX);
           broadcast_without_self(
             JSON.stringify({
               ACTION: "UPDATE_PLAYER",
@@ -228,7 +239,7 @@ wss.on("connection", (ws) => {
   ws.on("close", () => {
     console.log("Disconnected");
     players.splice(players.indexOf(player), 1);
-    broadcast(JSON.stringify(""));
+    broadcast(JSON.stringify("Test"));
   });
 });
 
