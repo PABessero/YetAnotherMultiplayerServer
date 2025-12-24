@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as http from "http";
 import * as WebSocket from "ws";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuid4 } from "uuid";
 import { BuildableObject } from "./objects/BuildableObject";
 import { Player } from "./objects/Player";
 import { Tile } from "./objects/Tile";
@@ -71,7 +71,7 @@ wss.on("connection", (ws) => {
     }
   }
 
-  const player = new Player(uuidv4());
+  const player = new Player(uuid4());
   // console.log(player);
   players.push(player);
 
@@ -105,7 +105,7 @@ wss.on("connection", (ws) => {
           );
           const newObject = new BuildableObject(
             json_message["OBJECT"],
-            uuidv4(),
+            uuid4(),
             json_message["POS_X"],
             json_message["POS_Y"],
             json_message["Height"],

@@ -1,0 +1,30 @@
+{
+  "name": "yet-another-multiplayer-server",
+  "version": "1.0.0",
+  "description": "Just a quick multiplayer WebSocket server for Construct 3",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PABessero/YetAnotherMultiplayerServer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PABessero/YetAnotherMultiplayerServer/issues"
+  },
+  "homepage": "https://github.com/PABessero/YetAnotherMultiplayerServer#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/ws": "^8.18.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "uuid": "^13.0.0",
+    "ws": "^8.18.3"
+  }
+}
